@@ -46,7 +46,7 @@ export function Pay() {
     let shippingInt = parseInt(shipping);
     useEffect(() => {
         getDataOrder();
-        if (shippingInt <= 0 || isPay === "Validating") {
+        if (shippingInt == null || isPay === "Validating") {
             const intervalId = setInterval(() => {
                 getDataOrder();
             }, 5000);
