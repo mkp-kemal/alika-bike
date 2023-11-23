@@ -46,7 +46,7 @@ export function Pay() {
     let shippingInt = parseInt(shipping);
     useEffect(() => {
         getDataOrder();
-        if (shippingInt == null || isPay === "Validating") {
+        if (shippingInt <= 0 || isPay === "Validating") {
             const intervalId = setInterval(() => {
                 getDataOrder();
             }, 5000);
@@ -178,7 +178,7 @@ export function Pay() {
                             <nav className="navbar text-center" style={{ position: 'fixed' }}>
                                 <div style={{ cursor: 'pointer' }} onClick={() => { window.history.back() }}>
                                 </div>
-                                <a class="navbar-brand" style={{ fontSize: '13px' }}><b>{shippingInt <= 0 ? "Menunggu Konfirmasi Admin" : order[0].is_pay === 'Yes' ? "Rincian Transaksi" : order[0].is_pay === 'Validating' ? "Admin sedang validasi pembayaran" : order[0].is_pay === 'Failed' ? "Pesananmu Gagal !!!" : "Silahkan Membayar Total Pembayaran"}</b></a>
+                                <a class="navbar-brand" style={{ fontSize: '13px' }}><b>{shippingInt <= 0 ? "Menunggu Konfirmasi Admin" : order[0].is_pay === 'Yes' ? "Rincian Transaksi" : order[0].is_pay === 'Validating' ? "Admin sedang validasi pembayaran" : order[0].is_pay === 'Failed' ? "Pesananmu Gagal !!!" : "Silahkan Membayar Sesuai Total Pembayaran"}</b></a>
                             </nav>
 
                             {order.length > 0 ? (
