@@ -144,9 +144,9 @@ export function Orders() {
             .then((response) => {
                 if (response.data.success) {
                     showToastSuccess("Pesanan Sukses");
-                    // setTimeout(() => {
-                    //     window.location.reload();
-                    // }, 1000);
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
                 }
             }).catch((error) => {
                 console.log(error);
@@ -173,9 +173,9 @@ export function Orders() {
             .then((response) => {
                 if (response.data.success) {
                     showToastSuccess("Pembayaran telah dikonfirmasi, silahkan kirim barang");
-                    // setTimeout(() => {
-                    //     window.location.reload();
-                    // }, 1000);
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
                 }
             }).catch((error) => {
                 console.log(error);
